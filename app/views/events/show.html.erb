@@ -1,0 +1,5 @@
+<h2>Name: <%= @event.name %></h2>
+<%= simple_format(@event.description) %>
+<p>Category: <%= @event.category.try(:name) %></p>
+
+<p><%= link_to 'Back to index', events_path %></p>

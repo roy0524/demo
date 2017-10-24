@@ -1,0 +1,16 @@
+<% if @event.errors.any? %>
+  <ul>
+    <% @event.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+<ul>
+<li><%= f.label :name, "Name"%>
+    <%= f.text_field :name %></li>
+
+<li><%= f.label :description, "Description" %>
+    <%= f.text_area :description %></li>
+
+<li><%= f.select :category_id, Category.all.map{ |c| [c.name, c.id] }%></li>
+</ul>
